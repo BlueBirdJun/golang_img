@@ -1,0 +1,5 @@
+ignore-dir/
+pkg
+
+ignore-file*
+*.exe
