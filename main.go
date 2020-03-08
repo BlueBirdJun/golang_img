@@ -6,40 +6,23 @@ import (
 	"os"
 
 	"domain"
+	"images"
 )
 
+func main() {
 
-
-
-func main() {   
-	 
-	rtmodel :=domain.ResultModel {}
-	
+	rtmodel := domain.ResultModel{}
 
 	fmt.Println("모듈을 시작합니다.")
 	if len(os.Args) == 1 {
-		rtmodel = global.ReadConfg("dev")
-		
-	} else	{
-		rtmodel = global.ReadConfg(os.Args[1])				
+		rtmodel = global.ReadConfg("dev") //환경설정
+	} else {
+		rtmodel = global.ReadConfg(os.Args[1])
+	}
+	if !rtmodel.Success {
+		os.Exit(3)
 	}
 
-	if(!rtmodel.Success){
-		os.Exit(3) 
-	}
-	//if rt ==true {
-	//	fmt.Println(mes)
-	//}
-	//else {
-	//	global.ReadConfg(os.Args[0])
-	//}
+	images.Imagedown("https://1.bp.blogspot.com/-cNRX4ory3lI/XmBCIvthS7I/AAAAAAAOrZ4/ZqfENsHP8AAeaZakN4I5jV3SqJAr4mfJQCLcBGAsYHQ/s1600/2.gif")
 
-	//argwithprog := os.Args
-	//argsWithProg := os.Args
-	//argsWithoutProg := os.Args[1:]
-	//arg := os.Args[3]
-	//fmt.Println(argsWithProg)
-	//fmt.Println(argsWithoutProg)
-	//fmt.Println(arg)
-	//fmt.Println("hi")
 }
